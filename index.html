@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Mozilla Firefox OS</title>
+    
+    <meta name="description" content="Mozilla Firefox OS slides" />
+    <meta name="author" content="Julian Ceballos" />
+
+    <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
+
+    <link href="css/stylesheet.css" rel="stylesheet" />
+    
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+</head>
+
+<body class="impress-not-supported">
+
+<div class="fallback-message">
+    <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+    <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+</div>
+
+<div id="impress">
+
+    <div class="step" data-x="-1500" data-y="-2000">
+        <div class="phone-fox-container">
+            <div class="tail"></div>
+            <div class="phone"></div>
+            <div class="fox"></div>
+        </div>
+    </div>
+
+    <div id="features" class="step slide" data-x="0" data-y="-2000">
+        <h1 class="text-center huge"><strong>Todo en uno</strong></h1>
+        <canvas id="canvas" width="700" height="450"></canvas>
+    </div>
+
+    <div class="step" data-x="0" data-y="0" data-scale="4">
+        <h1 class="text-center"><strong>Música</strong></h1>
+        <div class="phone-fox-container">
+            <div class="phone"></div>
+            <div class="screen">
+                <img src="img/music.jpg">
+            </div>
+        </div>
+    </div>
+
+    <div class="step" data-x="2000" data-y="2500" data-rotate="90" data-scale="5">
+        <h1 class="text-center"><strong>Fotos</strong></h1>
+        <div class="phone-fox-container">
+            <div class="phone"></div>
+            <div class="screen">
+                <img src="img/photos.jpg">
+            </div>
+        </div>
+    </div>
+
+    <div class="step" data-x="9000" data-y="3500" data-rotate="300" data-scale=".5">
+        <h1 class="text-center"><strong>E-mail</strong></h1>
+        <div class="phone-fox-container">
+            <div class="phone"></div>
+            <div class="screen">
+                <img src="img/email.jpg">
+            </div>
+        </div>
+    </div>
+
+    <div class="step" data-x="8000" data-y="3500">
+        <h1 class="text-center"><strong>Mensajes</strong></h1>
+        <div class="phone-fox-container">
+            <div class="phone"></div>
+            <div class="screen">
+                <img src="img/messages.jpg">
+            </div>
+        </div>
+    </div>
+
+    <div class="step" data-x="8000" data-y="2000">
+        <h1 class="text-center"><strong>Busquedas increibles</strong></h1>
+        <div class="phone-fox-container">
+            <div class="phone"></div>
+            <div class="screen animated">
+                <img src="img/search.jpg">
+            </div>
+        </div>
+    </div>
+
+    <div class="step" data-x="8000" data-y="1000">
+        <h1 class="text-center"><strong>Marketplace</strong></h1>
+        <div class="phone-fox-container">
+            <div class="phone"></div>
+            <div class="screen">
+                <img src="img/marketplace.jpg">
+            </div>
+        </div>
+    </div>
+
+    <div class="step" data-x="8000" data-y="0">
+        <p class="text-center">
+            <img src="img/marketplace.png" width="200">
+        </p>
+        <p class="text-center" style="margin-top: 10px;">
+            <img src="img/apps/facebook.png">
+            <img src="img/apps/twitter.png">
+            <img src="img/apps/wikipedia.png">
+            <img src="img/apps/ninegag.png">
+            <img src="img/apps/candycrush.png">
+            <img src="img/apps/airbnb.png">
+            <img src="img/apps/kayak.png">
+            <img src="img/apps/box.png">
+            <img src="img/apps/soundcloud.png">
+        </p>
+        <p class="text-center">¡Estamos esperando tus apps!</p>
+    </div>
+
+    <div class="step" data-x="9000" data-y="0">
+        <h1 class="text-center"><strong>&lt;HTML5/&gt;</strong></h1>
+    </div>
+
+    <div class="step" data-x="10000" data-y="0">
+        <h1 class="text-center"><strong>.CSS3 {}</strong></h1>
+    </div>
+
+    <div class="step" data-x="11000" data-y="0">
+        <h1 class="text-center"><strong>Javascript()</strong></h1>
+    </div>
+
+    <div class="step" data-x="12000" data-y="2000" data-rotate="200" data-scale="2">
+        <p class="text-center">
+            <img src="img/mozilla.png" width="500">
+        </p>
+        <h1 class="text-center"><strong>¡Gracias!</strong></h1>
+    </div>
+
+</div>
+
+
+<script src="js/impress.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/wordcloud2.js"></script>
+<script>
+    window.onload = function() {
+        impress().init();
+        WordCloud(document.getElementById('canvas'), {
+            list: formList(),
+            fontWeight: 'normal',
+            fontFamily: 'Helvetica, Arial',
+            color: 'gray',
+            shape: 'square',
+            gridSize: Math.round(16 * $('#canvas').width() / 1024),
+            weightFactor: function (size) {
+                return Math.pow(size, 2.3) * $('#canvas').width() / 1024;
+            }
+        });
+        function formList() {
+            list = '6:HTML5;5:Adaptable;7:Music;7:Video;7:Photos;6:CSS3;6:Javascript;5:Economic;5:Usability;8:Firefox;6:Open web;6:Open source;7:Calendar;7:Calc;7:Maps;7:Radio;7:Clock;7:Mail;7:Contacts;7:Messages;7:Phone;8:Marketplace;5:Contextual;5:Audio;5:Microphone;7:Camera;5:WiFi;5:Bluetooth;5:USD Device storage;5:Multiprocess;5:Touch gestures;5:WiFi hotspot;6:Software updates;5:Notifications;5:GPS;5:Localization;5:APIs;5:Acelerometer;5:Screen orientation;6:SVG;6:WebGL';
+            var rows = list.split(';');
+            var out = [];
+            for(var row in rows) {
+                out.push([rows[row].split(':')[1], rows[row].split(':')[0]]);
+            }
+            return out;
+        }
+    }
+</script>
+
+</body>
+</html>
